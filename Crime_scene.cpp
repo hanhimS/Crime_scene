@@ -44,8 +44,7 @@ int main() {
     auto room808 = Scene::create("808호(학부알바생방)", "Images/호텔 방.jpg");
 
     auto Gameover = Scene::create("", "Images/gameover.png");
-
-    auto end_next = Object::create("Images/next.png", Gameover, 1200, 230);
+    auto Gameover_0 = Scene::create("", "Images/gameover.png");
 
 
     //메인
@@ -201,10 +200,9 @@ int main() {
     auto reaction3 = Object::create("Images/튜토리얼/리액션2.png", tutorial9, 500, 65);
     reaction3->setScale(0.7f);
     reaction3->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-        Gameover->enter();
-        end_next->hide();
-        auto Gameover_object = Object::create("Images/gameover.png", Gameover, 0, 0);
-        Gameover_object->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
+        Gameover_0->enter();
+        auto Gameover_object_0 = Object::create("Images/gameover.png", Gameover_0, 0, 0);
+        Gameover_object_0->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
             if (x > 0 && x < 1280 && y > 0 && y < 720) {
                 endGame();
             }
@@ -232,7 +230,7 @@ int main() {
 
     int who = -1; //박사1석사2알바3연구4
 
-   
+    auto end_next = Object::create("Images/next.png", Gameover, 1200, 230);
 
     int next_num1 = 0;
     int  next_num2 = 0;
